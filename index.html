@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+        <div class="container">
+            <div>
+                <img src="./img/task-icon.png" alt="taks icon" height="20px">
+                <h2>To-Do list</h2>
+            </div>
+
+            <form id="task-form">
+                <input type="text" id="task-input" placeholder="Enter a new task">
+                <button type="submit" class="button--round">Add</button>
+            </form>
+            
+            <ul id="task-list"></ul>
+            <div id="filter-buttons-container">
+                <button type="button" id="all-button" class="button--round">All</button>
+                <button type="button" id="finished-button" class="button--round">Finished</button>
+                <button type="button" id="unfinished-button" class="button--round">Unfinished</button>
+            </div>
+            
+        </div>
+
+
+    <script src="./scripts.js"></script>
+</body>
+</html>

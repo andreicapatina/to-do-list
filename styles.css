@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    font-family: "Montserrat", sans-serif;
+}
+
+.container {
+    /* display: flex; */
+    padding: 30px 20px;
+    /* width: 450px; */
+    border: 2px solid #293568;
+    border-radius: 20px;
+}
+
+.container div {
+    display: flex;
+    align-items: center;
+    width: 360px;
+}
+
+h2 {
+    /* font-size: 30px; */
+    font-weight: 600;
+    margin-left: 10px;
+    color: #293568;
+}
+
+i {
+    color: #293568;
+}
+
+.button--round {
+    border-radius: 20px;
+    padding: 10px 30px;
+    background-color: white;
+    color: #293568;
+    border: 2px solid #293568;
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+.button--round:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+button[type="submit"].button--round {
+    background-color: #00a7b5;
+    color: white;
+    border: none;
+}
+
+#filter-buttons-container {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+
+    margin-top: 15px;
+
+}
+
+/* #filter-buttons-container button {
+    margin: 0 5px;
+} */
+
+#task-input {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+}
+
+#task-form {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 15px 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+li button {
+    margin-left: auto;
+  
+    background-color: transparent; /* Transparent background */
+    border: none;
+    color: red;                     /* Red text color */
+    font-size: 15px;                /* Adjust size as needed */
+    text-align: center;             /* Center text */
+    cursor: pointer;                /* Pointer cursor on hover */ 
+}
+
+li label {
+    margin-left: 12px;
+    cursor: pointer;
+    color: #353535;
+    /* font-weight: 500; */
+}
+
+.custom-checkbox {
+    appearance: none; /* Remove default checkbox styling */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* Make the checkbox round */
+    border: 2px solid #293568; /* Blue border */
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Add checkmark when the checkbox is checked */
+.custom-checkbox:checked::before {
+    content: '\2713'; /* Unicode checkmark */
+    color: green;
+    position: absolute;
+    font-size: 20px;
+    top: -3px;
+    /* left: 1px; */
+}
+
+/* Change the border color when checked */
+.custom-checkbox:checked {
+    border-color: green; /* Green border when checked */
+}
+
+.custom-checkbox:checked + label {
+    text-decoration: line-through;
+    text-decoration-color: #353535; /* Culoarea liniei de tăiere a textului */
+    color: gray;
+}
