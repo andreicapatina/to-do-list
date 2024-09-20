@@ -134,8 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function filterTasks(predicate) {
         taskList.innerHTML = ''; // Golește lista
         const tasks = getTasksFromLocalStorage();
-        console.log(tasks);
-        console.log("macar ceva");
         tasks.filter(predicate).forEach(addTaskToDOM);
     }
 
