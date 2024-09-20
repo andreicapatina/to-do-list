@@ -17,11 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
     //---Gestionarea Formularului//
     //---------------------------//
 
+
+    /*
+        !`event` este un obiect care reprezintă un eveniment.
+        !Conține informații precum tipul evenimentului (type) și elementul țintă (target).
+        !`event.preventDefault()` oprește comportamentul standard (ex: trimiterea formularului).
+    */
+
+
+    taskInput.addEventListener('input', () => {
+        if (taskInput.value.length > 24) {
+            taskInput.value = taskInput.value.substring(0, 24); // Обрезаем до 32 символов
+        }
+    });    
+
     // Gestionează trimiterea formularului
     taskForm.addEventListener('submit', (event) => {
         event.preventDefault(); // Previne comportamentul implicit al formularului
-        
-        const taskName = taskInput.value.trim();
+
+        const taskName = taskInput.value.trim(); // Returneaza un string gol ("") daca nu contine text 
         if (!taskName) return; // Ignoră sarcinile goale
 
         const newTask = { id: Date.now(), name: taskName, completed: false };
@@ -29,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         saveTaskToLocalStorage(newTask);
         taskInput.value = ''; // Golește câmpul de introducere
     });
+
 
     //---------------------------//
     //---Adăugarea Sarcinii-----//
@@ -119,6 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function filterTasks(predicate) {
         taskList.innerHTML = ''; // Golește lista
         const tasks = getTasksFromLocalStorage();
+        console.log(tasks);
+        console.log("macar ceva");
         tasks.filter(predicate).forEach(addTaskToDOM);
     }
 
